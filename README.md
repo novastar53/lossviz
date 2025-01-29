@@ -1,2 +1,0 @@
-# lossviz
-Loss Landscape Visualizer
