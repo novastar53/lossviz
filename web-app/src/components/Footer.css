@@ -1,0 +1,22 @@
+.footer {
+  background-color: var(--bg-dark);
+  padding: var(--spacing-md);
+  text-align: center;
+  border-top: 1px solid var(--primary-dark);
+  margin-top: auto;
+}
+
+.footer p {
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--primary-dark);
+}

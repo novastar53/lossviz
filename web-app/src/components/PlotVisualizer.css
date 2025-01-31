@@ -1,0 +1,95 @@
+.plot-visualizer {
+  background-color: var(--bg-dark);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  height: 100%;
+}
+
+.plot-controls {
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.plot-type-controls {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.dataset-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.dataset-name {
+  flex: 1;
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: var(--spacing-sm);
+  background-color: var(--bg-darker);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--primary-dark);
+}
+
+.plot-button {
+  background-color: var(--bg-darker);
+  color: var(--text-dim);
+  border: 1px solid var(--primary-dark);
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plot-button:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-darker);
+  transform: translateY(-1px);
+}
+
+.plot-button:active {
+  transform: translateY(0);
+}
+
+.plot-button.active {
+  background-color: var(--primary-color);
+  color: var(--bg-darker);
+  border-color: var(--primary-color);
+}
+
+.plot-container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  border: 1px solid var(--primary-dark);
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Modebar (plot controls) styling */
+.js-plotly-plot .plotly .modebar {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: var(--border-radius);
+  padding: 5px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.js-plotly-plot .plotly .modebar-btn path {
+  fill: #666666 !important;
+}
+
+.js-plotly-plot .plotly .modebar-btn:hover path {
+  fill: #2196f3 !important;
+}
+
+.js-plotly-plot .plotly .modebar-btn.active path {
+  fill: #2196f3 !important;
+}
