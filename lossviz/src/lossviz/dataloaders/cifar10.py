@@ -1,10 +1,15 @@
 import numpy as np
+import jax.numpy as jnp
 import torchvision.transforms as transforms
 from torchvision.datasets import CIFAR10
 from torch.utils import data
 
-from utils import *
+from dataloaders.utils import numpy_collate, NumpyLoader
 
+
+class FlattenAndCast(object):
+    def __call__(self, pic):
+        return np.array(pic.permute(1, 2, 0), dtype=jnp.float32)
 
 
 transforms_train = transforms.Compose([

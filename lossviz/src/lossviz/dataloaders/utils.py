@@ -13,11 +13,6 @@ def numpy_collate(batch):
         return np.array(batch)
 
 
-class FlattenAndCast(object):
-    def __call__(self, pic):
-        return np.array(pic.permute(1, 2, 0), dtype=jnp.float32)
-
-
 class NumpyLoader(data.DataLoader):
     def __init__(
         self,

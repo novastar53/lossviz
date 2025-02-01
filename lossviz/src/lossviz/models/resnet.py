@@ -81,6 +81,7 @@ class DownSampleResidualBlock(nn.Module):
 
 class ResidualCNN(nn.Module):
 
+    N: int = 9
     kernel_init: Callable = nn.initializers.kaiming_normal()
 
     @nn.compact
@@ -90,15 +91,15 @@ class ResidualCNN(nn.Module):
         x = nn.BatchNorm(use_running_average=not train, momentum=0.1, epsilon=1e-5)(x)
         x = nn.relu(x)
 
-        for _ in range(N-1):
+        for _ in range(self.N-1):
           x = ResidualBlock(in_channels=16)(x, train)
         x = DownSampleResidualBlock(in_channels=16, out_channels=32)(x, train)
 
-        for _ in range(N-1):
+        for _ in range(self.N-1):
           x = ResidualBlock(in_channels=32)(x, train)
         x = DownSampleResidualBlock(in_channels=32, out_channels=64)(x, train)
 
-        for _ in range(N):
+        for _ in range(self.N):
           x = ResidualBlock(in_channels=64)(x, train)
 
         x = nn.avg_pool(x, window_shape=(x.shape[1], x.shape[2]))
